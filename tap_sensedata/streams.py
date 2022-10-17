@@ -1,7 +1,5 @@
 from pathlib import Path
-from typing import Any, Dict, Optional, Union, List, Iterable
-
-from singer_sdk import typing as th  
+from typing import Any, Dict, List
 
 from tap_sensedata.client import sensedataStream
 

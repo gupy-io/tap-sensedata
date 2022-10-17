@@ -1,10 +1,8 @@
 from pathlib import Path
-from typing import Any, Dict, Optional, Union, List, Iterable
-from unicodedata import name
+from typing import Any, Dict, Optional, List
 
 from memoization import cached
 
-from singer_sdk.helpers.jsonpath import extract_jsonpath
 from singer_sdk.streams import RESTStream
 from singer_sdk.authenticators import BearerTokenAuthenticator
 
@@ -14,7 +12,6 @@ class sensedataStream(RESTStream):
 
     url_base = "https://api.sensedata.io/v2"
     next_page_token_jsonpath = "$.next_page"
-    #records_jsonpath = "$.customers[*]"
 
     @property
     def authenticator(self) -> BearerTokenAuthenticator:
