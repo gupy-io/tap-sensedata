@@ -1,0 +1,95 @@
+{
+    "type": "object",
+    "properties": {
+        "id": {
+          "type": ["null", "integer"]
+        },
+        "id_legacy": {
+          "type": ["null", "string"]
+        },
+        "id_customer": {
+          "type": ["null", "integer"]
+        },
+        "ref_date": {
+          "type": ["null", "string"],
+          "format": "date-time"
+        },
+        "type": {
+          "type": ["null", "string"]
+        },
+        "data": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": ["null", "string"]
+            },
+            "name": {
+              "type": ["null", "string"]
+            },
+            "status": {
+              "type": ["null", "string"]
+            },
+            "role_id": {
+              "type": ["null", "string"]
+            },
+            "job_type": {
+              "type": ["null", "string"]
+            },
+            "closed_at": {
+              "type": ["null", "string"],
+              "format": "date-time"
+            },
+            "user_type": {
+              "type": ["null", "string"]
+            },
+            "company_id": {
+              "type": ["null", "string"]
+            },
+            "created_at": {
+              "type": ["null", "string"],
+              "format": "date-time"
+            },
+            "creator_id": {
+              "type": ["null", "string"]
+            },
+            "deleted_at": {
+              "type": ["null", "string"],
+              "format": "date-time"
+            },
+            "expires_at": {
+              "type": ["null", "string"],
+              "format": "date-time"
+            },
+            "manager_id": {
+              "type": ["null", "string"]
+            },
+            "updated_at": {
+              "type": ["null", "string"],
+              "format": "date-time"
+            },
+            "published_at": {
+              "type": ["null", "string"],
+              "format": "date-time"
+            },
+            "recruiter_id": {
+              "type": ["null", "string"]
+            },
+            "department_id": {
+              "type": ["null", "string"]
+            },
+            "num_vacancies": {
+              "type": ["null", "string"]
+            },
+            "subsidiary_id": {
+              "type": ["null", "string"]
+            },
+            "career_page_id": {
+              "type": ["null", "string"]
+            },
+            "publication_type": {
+              "type": ["null", "string"]
+            }
+          }
+        }
+      }
+    }

@@ -1,0 +1,21 @@
+{
+    "type": "object",
+        "properties": {
+          "id": {
+            "type": ["null", "integer"]
+          },
+          "name": {
+            "type": ["null", "string"]
+          },
+          "created_on": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "deleted": {
+            "type": "boolean"
+          }
+        }
+      }

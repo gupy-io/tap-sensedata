@@ -1,0 +1,103 @@
+{
+    "type": "object",
+        "properties": {
+          "id": {
+            "type": ["null", "integer"]
+          },
+          "customer": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": ["null", "integer"]
+              },
+              "id_legacy": {
+                "type": ["null", "string"]
+              },
+              "group": {
+                "type": ["null", "string"]
+              },
+              "name_contract": {
+                "type": ["null", "string"]
+              },
+              "name": {
+                "type": ["null", "string"]
+              },
+              "cnpj": {
+                "type": ["null", "string"]
+              }
+            }
+          },
+          "id_customer": {
+            "type": ["null", "integer"]
+          },
+          "id_legacy": {
+            "type": ["null", "string"]
+          },
+          "item_sequence": {
+            "type": ["null", "integer"]
+          },
+          "paper_contract": {
+            "type": ["null", "string"]
+          },
+          "description": {
+            "type": ["null", "string"]
+          },
+          "model": {
+            "type": ["null", "string"]
+          },
+          "type": {
+            "type": ["null", "string"]
+          },
+          "instalments": {
+            "type": ["null", "integer"]
+          },
+          "start_date": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "end_date": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "monthly_payment": {
+            "type": ["null", "number"]
+          },
+          "status": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": ["null", "integer"]
+              },
+              "description": {
+                "type": ["null", "string"]
+              },
+              "enabled": {
+                "type": "boolean"
+              }
+            }
+          },
+          "auto_renewal": {
+            "type": "boolean"
+          },
+          "plan": {
+            "type": ["null", "string"]
+          },
+          "license_qty": {
+            "type": ["null", "integer"]
+          },
+          "is_subscription": {
+            "type": "boolean"
+          },
+          "cycle": {
+            "type": ["null", "integer"]
+          },
+          "created_on": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "created_at": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          }
+        }
+      }

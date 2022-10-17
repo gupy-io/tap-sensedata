@@ -1,62 +1,75 @@
-"""Stream type classes for tap-sensedata."""
-
 from pathlib import Path
 from typing import Any, Dict, Optional, Union, List, Iterable
 
-from singer_sdk import typing as th  # JSON Schema typing helpers
+from singer_sdk import typing as th  
 
 from tap_sensedata.client import sensedataStream
 
-# TODO: Delete this is if not using json files for schema definition
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
-# TODO: - Override `UsersStream` and `GroupsStream` with your own stream definition.
-#       - Copy-paste as many times as needed to create multiple stream types.
 
-
-class UsersStream(sensedataStream):
-    """Define custom stream."""
-    name = "users"
-    path = "/users"
+class CustomersStream(sensedataStream):
+    name = "customers"
+    path = "/customers"
     primary_keys = ["id"]
-    replication_key = None
-    # Optionally, you may also use `schema_filepath` in place of `schema`:
-    # schema_filepath = SCHEMAS_DIR / "users.json"
-    schema = th.PropertiesList(
-        th.Property("name", th.StringType),
-        th.Property(
-            "id",
-            th.StringType,
-            description="The user's system ID"
-        ),
-        th.Property(
-            "age",
-            th.IntegerType,
-            description="The user's age in years"
-        ),
-        th.Property(
-            "email",
-            th.StringType,
-            description="The user's email address"
-        ),
-        th.Property("street", th.StringType),
-        th.Property("city", th.StringType),
-        th.Property(
-            "state",
-            th.StringType,
-            description="State name in ISO 3166-2 format"
-        ),
-        th.Property("zip", th.StringType),
-    ).to_dict()
+    schema_filepath = SCHEMAS_DIR / "customers.json"
+    records_jsonpath = "$.{}[*]".format(name)
 
-
-class GroupsStream(sensedataStream):
-    """Define custom stream."""
-    name = "groups"
-    path = "/groups"
+class ContractsStream(sensedataStream):
+    name = "contracts"
+    path = "/contracts"
     primary_keys = ["id"]
-    replication_key = "modified"
-    schema = th.PropertiesList(
-        th.Property("name", th.StringType),
-        th.Property("id", th.StringType),
-        th.Property("modified", th.DateTimeType),
-    ).to_dict()
+    replication_key = "created_at"
+    schema_filepath = SCHEMAS_DIR / "contracts.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class ContractsStatusStream(sensedataStream):
+    name = "contracts_status"
+    path = "/contracts_status"
+    primary_keys = ["id"]
+    schema_filepath = SCHEMAS_DIR / "contracts_status.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class CustomDataStream(sensedataStream):
+    name = "custom_data"
+    path = "/custom_data"
+    primary_keys = ["id"]
+    schema_filepath = SCHEMAS_DIR / "custom_data.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class CustomTasksTypes(sensedataStream):
+    name = "tasks_types"
+    path = "/tasks_types"
+    primary_keys = ["id"]
+    schema_filepath = SCHEMAS_DIR / "tasks_types.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class CustomTasksStatus(sensedataStream):
+    name = "tasks_status"
+    path = "/tasks_status"
+    primary_keys = ["id"]
+    schema_filepath = SCHEMAS_DIR / "tasks_status.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class CustomTasks(sensedataStream):
+    name = "tasks"
+    path = "/tasks"
+    primary_keys = ["id"]
+    replication_key = "updated_at"
+    schema_filepath = SCHEMAS_DIR / "tasks.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class CustomPlaybooks(sensedataStream):
+    name = "playbooks"
+    path = "/playbooks"
+    primary_keys = ["id"]
+    replication_key = "created_on"
+    schema_filepath = SCHEMAS_DIR / "playbooks.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class CustomKpis(sensedataStream):
+    name = "kpis"
+    path = "/kpis"
+    primary_keys = ["type", "ref_date", "id_customer"]
+    replication_key = "ref_date"
+    schema_filepath = SCHEMAS_DIR / "kpis.json"
+    records_jsonpath = "$.{}[*]".format(name)
