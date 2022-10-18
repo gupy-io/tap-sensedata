@@ -34,21 +34,21 @@ class CustomDataStream(sensedataStream):
     schema_filepath = SCHEMAS_DIR / "custom_data.json"
     records_jsonpath = "$.{}[*]".format(name)
 
-class CustomTasksTypes(sensedataStream):
+class TasksTypesStream(sensedataStream):
     name = "tasks_types"
     path = "/tasks_types"
     primary_keys = ["id"]
     schema_filepath = SCHEMAS_DIR / "tasks_types.json"
     records_jsonpath = "$.{}[*]".format(name)
 
-class CustomTasksStatus(sensedataStream):
+class TasksStatusStream(sensedataStream):
     name = "tasks_status"
     path = "/tasks_status"
     primary_keys = ["id"]
     schema_filepath = SCHEMAS_DIR / "tasks_status.json"
     records_jsonpath = "$.{}[*]".format(name)
 
-class CustomTasks(sensedataStream):
+class TasksStream(sensedataStream):
     name = "tasks"
     path = "/tasks"
     primary_keys = ["id"]
@@ -56,7 +56,7 @@ class CustomTasks(sensedataStream):
     schema_filepath = SCHEMAS_DIR / "tasks.json"
     records_jsonpath = "$.{}[*]".format(name)
 
-class CustomPlaybooks(sensedataStream):
+class PlaybooksStream(sensedataStream):
     name = "playbooks"
     path = "/playbooks"
     primary_keys = ["id"]
@@ -64,7 +64,7 @@ class CustomPlaybooks(sensedataStream):
     schema_filepath = SCHEMAS_DIR / "playbooks.json"
     records_jsonpath = "$.{}[*]".format(name)
 
-class CustomKpis(sensedataStream):
+class KpisStream(sensedataStream):
     name = "kpis"
     path = "/kpis"
     primary_keys = ["type", "ref_date", "id_customer"]

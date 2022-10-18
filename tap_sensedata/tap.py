@@ -1,3 +1,6 @@
+import os
+import json
+
 from typing import List
 
 from singer_sdk import Tap, Stream
@@ -7,11 +10,11 @@ from tap_sensedata.streams import (
     ContractsStream,
     ContractsStatusStream,
     CustomDataStream,
-    CustomTasksTypes,
-    CustomTasksStatus,
-    CustomPlaybooks,
-    CustomKpis,
-    CustomTasks
+    TasksTypesStream,
+    TasksStatusStream,
+    PlaybooksStream,
+    KpisStream,
+    TasksStream
 )
 
 STREAM_TYPES = [
@@ -19,11 +22,11 @@ STREAM_TYPES = [
     ContractsStream,
     ContractsStatusStream,
     CustomDataStream,
-    CustomTasksTypes,
-    CustomTasksStatus,
-    CustomPlaybooks,
-    CustomKpis,
-    CustomTasks
+    TasksTypesStream,
+    TasksStatusStream,
+    PlaybooksStream,
+    KpisStream,
+    TasksStream
 ]
 
 
@@ -44,10 +47,36 @@ class Tapsensedata(Tap):
             description="The earliest record date to sync"
         ),
     ).to_dict()
+    
+
+    def get_stream_types(self) -> List[Stream]:
+
+        stream_types = []
+        select_statement = json.loads(os.environ.get("TAP_SENSEDATA__SELECT", '["*.*"]'))
+
+        if select_statement == ["*.*"]:
+            stream_types = STREAM_TYPES
+
+        else:
+
+            for s in stream_types:
+
+                stream_types.append(s.replace(".*", ""))
+
+        return stream_types
+
 
     def discover_streams(self) -> List[Stream]:
-        """Return a list of discovered streams."""
-        return [stream_class(tap=self) for stream_class in STREAM_TYPES]
+
+        stream_classes: List[Stream] = []
+
+        for stream_class in self.get_stream_types():
+
+            stream_classes.append(
+                stream_class(tap=self)
+            )
+
+        return stream_classes
 
 
 if __name__ == "__main__":

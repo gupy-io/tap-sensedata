@@ -206,7 +206,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "number"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -254,7 +254,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "number"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -270,7 +270,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "number"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -302,7 +302,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -318,7 +318,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -342,7 +342,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -375,7 +375,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "string"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -399,7 +399,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -407,7 +407,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "string"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -415,7 +415,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -431,7 +431,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -481,7 +481,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "string"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -515,7 +515,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "string"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -540,7 +540,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -575,7 +575,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "string"]
+              "type": ["null", "integer","string"]
             }
           }
         },
@@ -591,7 +591,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -599,7 +599,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -633,7 +633,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -666,7 +666,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -674,7 +674,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "number"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -707,7 +707,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -715,7 +715,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "string"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -731,7 +731,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -739,7 +739,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "number"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -747,7 +747,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "number"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -763,7 +763,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "number"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -771,7 +771,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         },
@@ -787,7 +787,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "number"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -795,7 +795,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "number"]
+              "type": ["null", "number", "string"]
             }
           }
         },
@@ -811,7 +811,7 @@
           "type": "object",
           "properties": {
             "value": {
-              "type": ["null", "integer"]
+              "type": ["null", "integer", "string"]
             }
           }
         }
