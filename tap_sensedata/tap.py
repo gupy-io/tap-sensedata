@@ -17,17 +17,17 @@ from tap_sensedata.streams import (
     TasksStream
 )
 
-STREAM_TYPES = [
-    CustomersStream,
-    ContractsStream,
-    ContractsStatusStream,
-    CustomDataStream,
-    TasksTypesStream,
-    TasksStatusStream,
-    PlaybooksStream,
-    KpisStream,
-    TasksStream
-]
+STREAM_TYPES = {
+    "Customers": CustomersStream,
+    "Contracts": ContractsStream,
+    "ContractsStatus": ContractsStatusStream,
+    "CustomData": CustomDataStream,
+    "TasksTypes": TasksTypesStream,
+    "TasksStatus": TasksStatusStream,
+    "Playbooks": PlaybooksStream,
+    "Kpis": KpisStream,
+    "Tasks": TasksStream
+}
 
 
 class Tapsensedata(Tap):
@@ -55,18 +55,17 @@ class Tapsensedata(Tap):
         select_statement = json.loads(os.environ.get("TAP_SENSEDATA__SELECT", '["*.*"]'))
 
         if select_statement == ["*.*"]:
-            stream_types = STREAM_TYPES
-
+            stream_types = STREAM_TYPES.values()
         else:
-
-            for s in stream_types:
-
-                stream_types.append(s.replace(".*", ""))
+            stream_types = [
+                STREAM_TYPES.get(s.replace(".*", "")) for s in select_statement
+            ]
 
         return stream_types
 
 
     def discover_streams(self) -> List[Stream]:
+        """Return a list of discovered streams."""
 
         stream_classes: List[Stream] = []
 

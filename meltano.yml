@@ -10,6 +10,7 @@ plugins:
     - state
     - catalog
     - discover
+    - properties
     settings:
     - name: auth_token
       env: TAP_SENSEDATA_AUTH_TOKEN

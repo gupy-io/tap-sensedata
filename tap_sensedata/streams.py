@@ -31,6 +31,7 @@ class CustomDataStream(sensedataStream):
     name = "custom_data"
     path = "/custom_data"
     primary_keys = ["id"]
+    replication_key = "ref_date"
     schema_filepath = SCHEMAS_DIR / "custom_data.json"
     records_jsonpath = "$.{}[*]".format(name)
 
