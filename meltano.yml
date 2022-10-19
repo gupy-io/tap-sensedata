@@ -10,15 +10,12 @@ plugins:
     - state
     - catalog
     - discover
-    config:
-      start_date: '2010-01-01T00:00:00Z'
+    - properties
     settings:
-    # TODO: To configure using Meltano, declare settings and their types here:
-    - name: username
-    - name: password
-      kind: password
+    - name: auth_token
+      env: TAP_SENSEDATA_AUTH_TOKEN
     - name: start_date
-      value: '2010-01-01T00:00:00Z'
+      env: TAP_SENSEDATA_START_DATE
   loaders:
   - name: target-jsonl
     variant: andyh1203

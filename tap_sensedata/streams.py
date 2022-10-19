@@ -1,62 +1,52 @@
-"""Stream type classes for tap-sensedata."""
-
 from pathlib import Path
-from typing import Any, Dict, Optional, Union, List, Iterable
-
-from singer_sdk import typing as th  # JSON Schema typing helpers
+from typing import Any, Dict, List
 
 from tap_sensedata.client import sensedataStream
 
-# TODO: Delete this is if not using json files for schema definition
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
-# TODO: - Override `UsersStream` and `GroupsStream` with your own stream definition.
-#       - Copy-paste as many times as needed to create multiple stream types.
 
 
-class UsersStream(sensedataStream):
-    """Define custom stream."""
-    name = "users"
-    path = "/users"
+class ContractsStream(sensedataStream):
+    name = "contracts"
+    path = "/contracts"
     primary_keys = ["id"]
-    replication_key = None
-    # Optionally, you may also use `schema_filepath` in place of `schema`:
-    # schema_filepath = SCHEMAS_DIR / "users.json"
-    schema = th.PropertiesList(
-        th.Property("name", th.StringType),
-        th.Property(
-            "id",
-            th.StringType,
-            description="The user's system ID"
-        ),
-        th.Property(
-            "age",
-            th.IntegerType,
-            description="The user's age in years"
-        ),
-        th.Property(
-            "email",
-            th.StringType,
-            description="The user's email address"
-        ),
-        th.Property("street", th.StringType),
-        th.Property("city", th.StringType),
-        th.Property(
-            "state",
-            th.StringType,
-            description="State name in ISO 3166-2 format"
-        ),
-        th.Property("zip", th.StringType),
-    ).to_dict()
+    replication_key = "created_at"
+    schema_filepath = SCHEMAS_DIR / "contracts.json"
+    records_jsonpath = "$.{}[*]".format(name)
 
-
-class GroupsStream(sensedataStream):
-    """Define custom stream."""
-    name = "groups"
-    path = "/groups"
+class ContractsStatusStream(sensedataStream):
+    name = "contracts_status"
+    path = "/contracts_status"
     primary_keys = ["id"]
-    replication_key = "modified"
-    schema = th.PropertiesList(
-        th.Property("name", th.StringType),
-        th.Property("id", th.StringType),
-        th.Property("modified", th.DateTimeType),
-    ).to_dict()
+    schema_filepath = SCHEMAS_DIR / "contracts_status.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class TasksTypesStream(sensedataStream):
+    name = "tasks_types"
+    path = "/tasks_types"
+    primary_keys = ["id"]
+    schema_filepath = SCHEMAS_DIR / "tasks_types.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class TasksStatusStream(sensedataStream):
+    name = "tasks_status"
+    path = "/tasks_status"
+    primary_keys = ["id"]
+    schema_filepath = SCHEMAS_DIR / "tasks_status.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class PlaybooksStream(sensedataStream):
+    name = "playbooks"
+    path = "/playbooks"
+    primary_keys = ["id"]
+    replication_key = "created_on"
+    schema_filepath = SCHEMAS_DIR / "playbooks.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class KpisStream(sensedataStream):
+    name = "kpis"
+    path = "/kpis"
+    primary_keys = ["type", "ref_date", "id_customer"]
+    replication_key = "ref_date"
+    schema_filepath = SCHEMAS_DIR / "kpis.json"
+    records_jsonpath = "$.{}[*]".format(name)

@@ -1,0 +1,41 @@
+{
+    "type": "object",
+        "properties": {
+          "id_customer": {
+            "type": ["null", "integer"]
+          },
+          "ref_date": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "type": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": ["null", "integer"]
+              },
+              "name": {
+                "type": ["null", "string"]
+              },
+              "description": {
+                "type": ["null", "string"]
+              },
+              "unit": {
+                "type": ["null", "string"]
+              },
+              "inv_proportional": {
+                "type": "boolean"
+              },
+              "is_custom": {
+                "type": "boolean"
+              },
+              "active": {
+                "type": "boolean"
+              }
+            }
+          },
+          "value": {
+            "type": ["null", "number"]
+          }
+        }
+      }
