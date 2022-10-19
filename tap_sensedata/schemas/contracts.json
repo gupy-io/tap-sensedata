@@ -89,7 +89,7 @@
             "type": "boolean"
           },
           "cycle": {
-            "type": ["null", "integer"]
+            "type": ["null", "integer", "string"]
           },
           "created_on": {
             "type": ["null", "string"],
