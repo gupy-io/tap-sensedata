@@ -1,10 +1,25 @@
 from pathlib import Path
-from typing import Any, Dict, List
 
 from tap_sensedata.client import sensedataStream
 
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
+
+class CustomersStream(sensedataStream):
+    name = "customers"
+    path = "/customers"
+    primary_keys = ["id"]
+    replication_key = "updated_at"
+    schema_filepath = SCHEMAS_DIR / "customers.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class CustomDataStream(sensedataStream):
+    name = "custom_data"
+    path = "/custom_data"
+    primary_keys = ["id"]
+    replication_key = "ref_date"
+    schema_filepath = SCHEMAS_DIR / "custom_data.json"
+    records_jsonpath = "$.{}[*]".format(name)
 
 class ContractsStream(sensedataStream):
     name = "contracts"
@@ -33,6 +48,14 @@ class TasksStatusStream(sensedataStream):
     path = "/tasks_status"
     primary_keys = ["id"]
     schema_filepath = SCHEMAS_DIR / "tasks_status.json"
+    records_jsonpath = "$.{}[*]".format(name)
+
+class TasksStream(sensedataStream):
+    name = "tasks"
+    path = "/tasks"
+    primary_keys = ["id"]
+    replication_key = "updated_at"
+    schema_filepath = SCHEMAS_DIR / "tasks.json"
     records_jsonpath = "$.{}[*]".format(name)
 
 class PlaybooksStream(sensedataStream):
