@@ -1,0 +1,23 @@
+{
+    "type": "object",
+        "properties": {
+          "id": {
+            "type": ["null", "integer"]
+          },
+          "id_legacy": {
+            "type": ["null", "string"]
+          },
+          "id_customer": {
+            "type": ["null", "integer"]
+          },
+          "ref_date": {
+            "type": ["null", "string"]
+          },
+          "type": {
+            "type": ["null", "string"]
+          },
+          "data": {
+            "type": "object"
+            }
+          }
+        }

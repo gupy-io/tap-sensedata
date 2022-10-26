@@ -8,7 +8,10 @@ from tap_sensedata.streams import (
     TasksTypesStream,
     TasksStatusStream,
     PlaybooksStream,
-    KpisStream
+    KpisStream,
+    CustomersStream,
+    CustomDataStream,
+    TasksStream
 )
 
 STREAM_TYPES = [
@@ -17,7 +20,10 @@ STREAM_TYPES = [
     TasksTypesStream,
     TasksStatusStream,
     PlaybooksStream,
-    KpisStream
+    KpisStream,
+    CustomersStream,
+    CustomDataStream,
+    TasksStream
 ]
 
 
