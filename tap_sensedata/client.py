@@ -9,7 +9,6 @@ class sensedataStream(RESTStream):
 
     url_base = "https://api.sensedata.io/v2"
     next_page_token_jsonpath = "$.next_page"
-    query_search = {}
 
     @property
     def authenticator(self) -> BearerTokenAuthenticator:
@@ -31,7 +30,7 @@ class sensedataStream(RESTStream):
         self, context: Optional[dict], next_page_token: Optional[Any]
     ) -> Dict[str, Any]:
         """Return a dictionary of values to be used in URL parameterization."""
-        params: dict = self.query_search
+        params: dict = {}
         params["limit"] = 500
         if next_page_token:
             params["page"] = next_page_token
