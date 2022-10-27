@@ -1,7 +1,4 @@
-from pathlib import Path
-from typing import Any, Dict, Optional, List
-
-from memoization import cached
+from typing import Any, Dict, Optional
 
 from singer_sdk.streams import RESTStream
 from singer_sdk.authenticators import BearerTokenAuthenticator
@@ -34,6 +31,7 @@ class sensedataStream(RESTStream):
     ) -> Dict[str, Any]:
         """Return a dictionary of values to be used in URL parameterization."""
         params: dict = {}
+        params["limit"] = 500
         if next_page_token:
             params["page"] = next_page_token
         if self.replication_key:

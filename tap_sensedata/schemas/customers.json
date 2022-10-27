@@ -1,0 +1,173 @@
+{
+    "type": "object",
+        "properties": {
+          "id": {
+            "type": ["null", "integer"]
+          },
+          "id_legacy": {
+            "type": ["null", "string"]
+          },
+          "group": {
+            "type": ["null", "string"]
+          },
+          "name_contract": {
+            "type": ["null", "string"]
+          },
+          "name": {
+            "type": ["null", "string"]
+          },
+          "cnpj": {
+            "type": ["null", "string"]
+          },
+          "status": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": ["null", "integer"]
+              },
+              "description": {
+                "type": ["null", "string"]
+              },
+              "enabled": {
+                "type": ["null", "boolean"]
+              }
+            }
+          },
+          "state": {
+            "type": ["null", "string"]
+          },
+          "city": {
+            "type": ["null", "string"]
+          },
+          "size": {
+            "type": ["null", "string"]
+          },
+          "stage": {
+            "type": ["null", "string"]
+          },
+          "dt_stage": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "dt_register": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "industry": {
+            "type": ["null", "string"]
+          },
+          "salesperson": {
+            "type": ["null", "string"]
+          },
+          "cs": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": ["null", "integer"]
+              },
+              "name": {
+                "type": ["null", "string"]
+              },
+              "username": {
+                "type": ["null", "string"]
+              },
+              "email": {
+                "type": ["null", "string"]
+              },
+              "profile": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": ["null", "string"]
+                  },
+                  "role": {
+                    "type": ["null", "string"]
+                  }
+                }
+              },
+              "active": {
+                "type": ["null", "boolean"]
+              },
+              "registered_on": {
+                "type": ["null", "string"],
+                "format": "date-time"
+              },
+              "created_at": {
+                "type": ["null", "string"],
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": ["null", "string"],
+                "format": "date-time"
+              }
+            }
+          },
+          "csm": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": ["null", "integer"]
+              },
+              "name": {
+                "type": ["null", "string"]
+              },
+              "username": {
+                "type": ["null", "string"]
+              },
+              "email": {
+                "type": ["null", "string"]
+              },
+              "profile": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": ["null", "string"]
+                  },
+                  "role": {
+                    "type": ["null", "string"]
+                  }
+                }
+              },
+              "active": {
+                "type": ["null", "boolean"]
+              },
+              "registered_on": {
+                "type": ["null", "string"],
+                "format": "date-time"
+              },
+              "created_at": {
+                "type": ["null", "string"],
+                "format": "date-time"
+              },
+              "updated_at": {
+                "type": ["null", "string"],
+                "format": "date-time"
+              }
+            }
+          },
+          "dt_cancel": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "cancel_tag": {
+            "type": ["null", "string"]
+          },
+          "cancel_description": {
+            "type": ["null", "string"]
+          },
+          "badge": {
+            "type": "object"
+          },
+          "created_at": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "updated_at": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "custom_fields": {
+            "type": "object"
+          }
+        }
+      }

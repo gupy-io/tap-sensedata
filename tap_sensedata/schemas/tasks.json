@@ -1,0 +1,115 @@
+{
+    "type": "object",
+        "properties": {
+          "id": {
+            "type": ["null", "integer"]
+          },
+          "id_legacy": {
+            "type": ["null", "string"]
+          },
+          "customer": {
+            "type": ["null", "string", "object"]
+          },
+          "playbook": {
+            "type": ["null", "string", "object"]
+          },
+          "rule": {
+            "type": ["null", "string", "object"]
+          },
+          "contact": {
+            "type": ["null", "string", "object"]
+          },
+          "parent": {
+            "type": ["null", "string", "object"]
+          },
+          "owner": {
+            "type": ["null", "string", "object"]
+            },
+          "created_by": {
+            "type": ["null", "string", "object"]
+          },
+          "updated_by": {
+            "type": ["null", "string", "object"]
+          },
+          "type": {
+            "type": ["null", "string", "object"]
+            },
+          "status": {
+            "type": ["null", "string", "object"]
+            },
+          "priority": {
+            "type": ["null", "string", "object"]
+            },
+          "group": {
+            "type": ["null", "string"]
+          },
+          "description": {
+            "type": ["null", "string"]
+          },
+          "notes": {
+            "type": ["null", "string"]
+          },
+          "created_on": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "start_date": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "due_date": {
+            "type": ["null", "string"],
+            "format": "date"
+          },
+          "end_date": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "hours_spent": {
+            "type": ["null", "integer", "number"]
+          },
+          "hours_planned": {
+            "type": ["null", "integer", "number"]
+          },
+          "progress": {
+            "type": ["null", "integer"]
+          },
+          "tags": {
+            "type": ["null", "string"]
+          },
+          "created_at": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "system_end_date": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "updated_at": {
+            "type": ["null", "string"],
+            "format": "date-time"
+          },
+          "custom_value": {
+            "type": ["null", "integer", "number"]
+          },
+          "favorite": {
+            "type": ["null", "boolean"]
+          },
+          "id_parent": {
+            "type": ["null", "integer"]
+          },
+          "id_playbook": {
+            "type": ["null", "integer"]
+          },
+          "id_rule": {
+            "type": ["null", "integer"]
+          },
+          "id_customer": {
+            "type": ["null", "integer"]
+          },
+          "id_contact": {
+            "type": ["null", "integer"]
+          }
+        }
+      }
+        
