@@ -160,7 +160,7 @@
           },
           "created_at": {
             "type": ["null", "string"],
-            "format": "date"
+            "format": "date-time"
           },
           "updated_at": {
             "type": ["null", "string"],

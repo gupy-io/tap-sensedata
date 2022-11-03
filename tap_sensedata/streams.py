@@ -1,6 +1,6 @@
 from pathlib import Path
-
-from singer_sdk import typing as th  # JSON Schema typing helpers
+import os
+from datetime import date, timedelta
 
 from tap_sensedata.client import sensedataStream
 
@@ -19,6 +19,11 @@ class CustomDataStream(sensedataStream):
     name = "custom_data"
     path = "/custom_data"
     primary_keys = ["id"]
+    ref_date_start = date.today() - timedelta(days=int(os.getenv("TAP_SENSEDATA_CUSTOM_DATA_REF_DATE_START")))
+    query_search={
+        "ref_date:start": f'{ref_date_start}',
+        "limit": 1000
+    }
     replication_key = "ref_date"
     schema_filepath = SCHEMAS_DIR / "custom_data.json"
     records_jsonpath = "$.{}[*]".format(name)
@@ -71,7 +76,12 @@ class PlaybooksStream(sensedataStream):
 class KpisStream(sensedataStream):
     name = "kpis"
     path = "/kpis"
-    primary_keys = ["type", "ref_date", "id_customer"]
+    primary_keys = ["type.name", "ref_date", "id_customer"]
+    ref_date_start = date.today() - timedelta(days=int(os.getenv("TAP_SENSEDATA_KPIS_REF_DATE_START")))
+    query_search={
+        "ref_date:start": f'{ref_date_start}',
+        "limit": 1000
+    }
     replication_key = "ref_date"
     schema_filepath = SCHEMAS_DIR / "kpis.json"
     records_jsonpath = "$.{}[*]".format(name)
