@@ -1,6 +1,6 @@
 from pathlib import Path
 import os
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 from tap_sensedata.client import sensedataStream
 
@@ -62,6 +62,11 @@ class TasksStream(sensedataStream):
     path = "/tasks"
     primary_keys = ["id"]
     replication_key = "updated_at"
+    updated_at_start = datetime.today() - timedelta(days=int(os.getenv("TAP_SENSEDATA_TASKS_UPDATED_AT_START")))
+    query_search={
+        "updated_at:start": f'{updated_at_start}',
+        "limit": 1000
+    }
     schema_filepath = SCHEMAS_DIR / "tasks.json"
     records_jsonpath = "$.{}[*]".format(name)
 
