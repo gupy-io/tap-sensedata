@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: tap-sensedata
+  description: None
+  annotations:
+    github.com/project-slug: gupy-io/tap-sensedata
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: library
+  owner: plataforma-de-dados
+  lifecycle: production
