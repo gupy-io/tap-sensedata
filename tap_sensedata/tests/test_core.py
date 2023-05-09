@@ -14,10 +14,7 @@ SAMPLE_CONFIG = {
 
 def test_standard_tap_tests():
     """Run standard tap tests from the SDK."""
-    tests = get_standard_tap_tests(
-        Tapsensedata,
-        config=SAMPLE_CONFIG
-    )
+    tests = get_standard_tap_tests(Tapsensedata, config=SAMPLE_CONFIG)
 
     for test in tests:
         test()
