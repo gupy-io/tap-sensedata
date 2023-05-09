@@ -16,6 +16,12 @@ plugins:
       env: TAP_SENSEDATA_AUTH_TOKEN
     - name: start_date
       env: TAP_SENSEDATA_START_DATE
+    - name: days_to_decrease_custom_data
+      env: TAP_SENSEDATA_DAYS_TO_DECREASE_CUSTOM_DATA
+    - name: days_to_decrease_tasks
+      env: TAP_SENSEDATA_DAYS_TO_DECREASE_TASKS
+    - name: days_to_decrease_kpis
+      env: TAP_SENSEDATA_DAYS_TO_DECREASE_KPIS
   loaders:
   - name: target-jsonl
     variant: andyh1203

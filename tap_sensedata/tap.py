@@ -1,17 +1,18 @@
 from typing import List
 
-from singer_sdk import Tap, Stream
-from singer_sdk import typing as th 
+from singer_sdk import Stream, Tap
+from singer_sdk import typing as th
+
 from tap_sensedata.streams import (
-    ContractsStream,
     ContractsStatusStream,
-    TasksTypesStream,
-    TasksStatusStream,
-    PlaybooksStream,
-    KpisStream,
-    CustomersStream,
+    ContractsStream,
     CustomDataStream,
-    TasksStream
+    CustomersStream,
+    KpisStream,
+    PlaybooksStream,
+    TasksStatusStream,
+    TasksStream,
+    TasksTypesStream,
 )
 
 STREAM_TYPES = [
@@ -23,12 +24,13 @@ STREAM_TYPES = [
     KpisStream,
     CustomersStream,
     CustomDataStream,
-    TasksStream
+    TasksStream,
 ]
 
 
 class Tapsensedata(Tap):
     """sensedata tap class."""
+
     name = "tap-sensedata"
 
     config_jsonschema = th.PropertiesList(
@@ -36,15 +38,32 @@ class Tapsensedata(Tap):
             "auth_token",
             th.StringType,
             required=True,
-            description="The token to authenticate against the API service"
+            description="The token to authenticate against the API service",
         ),
         th.Property(
             "start_date",
             th.DateTimeType,
-            description="The earliest record date to sync"
+            description="The earliest record date to sync",
+        ),
+        th.Property(
+            "days_to_decrease_custom_data",
+            th.StringType,
+            default="10",
+            description="Days to be subtracted to get data from the custom_data entity",
+        ),
+        th.Property(
+            "days_to_decrease_tasks",
+            th.StringType,
+            default="3",
+            description="Days to be subtracted to get data from the tasks entity",
+        ),
+        th.Property(
+            "days_to_decrease_kpis",
+            th.StringType,
+            default="3",
+            description="Days to be subtracted to get data from the kpis entity",
         ),
     ).to_dict()
-
 
     def discover_streams(self) -> List[Stream]:
         """Return a list of discovered streams."""
