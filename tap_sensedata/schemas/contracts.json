@@ -93,7 +93,7 @@
           },
           "created_on": {
             "type": ["null", "string"],
-            "format": "date"
+            "format": "date-time"
           },
           "created_at": {
             "type": ["null", "string"],
