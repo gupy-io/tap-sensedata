@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from tap_sensedata.client import sensedataStream
+from tap_sensedata import schemas
 
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
@@ -84,3 +85,12 @@ class KpisStream(sensedataStream):
     replication_key = "ref_date"
     schema_filepath = SCHEMAS_DIR / "kpis.json"
     records_jsonpath = "$.{}[*]".format(name)
+
+
+class ContactsStream(sensedataStream):
+    name = "contacts"
+    path = "/contacts"
+    primary_keys = ["id"]
+    replication_key = None
+    records_jsonpath = "contacts.[*]"
+    schema = schemas.contacts
