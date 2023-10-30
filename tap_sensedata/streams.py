@@ -87,9 +87,9 @@ class KpisStream(sensedataStream):
     records_jsonpath = "$.{}[*]".format(name)
 
 
-class ContactsStream(sensedataStream):
+class ActiveContactsStream(sensedataStream):
     name = "contacts"
-    path = "/contacts"
+    path = "/contacts?is_active=true"
     primary_keys = ["id"]
     replication_key = None
     records_jsonpath = "contacts.[*]"
