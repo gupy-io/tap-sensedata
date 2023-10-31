@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from tap_sensedata.client import sensedataStream
-from tap_sensedata.schema import contacts
+from tap_sensedata import schemas
 
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
@@ -93,4 +93,4 @@ class ActiveContactsStream(sensedataStream):
     primary_keys = ["id"]
     replication_key = None
     records_jsonpath = "contacts.[*]"
-    schema = contacts
+    schema = schemas.contacts
