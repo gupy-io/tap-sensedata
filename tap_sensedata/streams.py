@@ -93,4 +93,4 @@ class ActiveContactsStream(sensedataStream):
     primary_keys = ["id"]
     replication_key = None
     records_jsonpath = "contacts.[*]"
-    schema = schemas.contacts
+    schema = contacts
