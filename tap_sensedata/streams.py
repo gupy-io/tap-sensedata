@@ -1,7 +1,7 @@
 from pathlib import Path
 
-from tap_sensedata import schemas
 from tap_sensedata.client import sensedataStream
+from tap_sensedata.schema import contacts
 
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
