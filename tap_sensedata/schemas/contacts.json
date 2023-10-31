@@ -1,0 +1,44 @@
+{
+    "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer"
+            },
+            "customer": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": ["null", "integer"]
+                  },
+                  "id_legacy": {
+                    "type": ["null", "string"]
+                  },
+                  "name_contract": {
+                    "type": ["null", "string"]
+                  },
+                  "name": {
+                    "type": ["null", "string"]
+                  }
+                }
+            },
+            "is_active": {
+                "type" : "boolean"
+            },
+            "name": {
+                "type": ["null", "string"]
+            },
+            "email": {
+                "type": ["null", "string"]
+            },
+            "custom_fields": {
+                "type": "object",
+                "properties": {
+                  "comunicacoes_cm": {
+                    "type": ["null", "string"],
+                    "optional": true
+                  }
+                }
+            }
+        }
+    }
+
