@@ -21,6 +21,9 @@
                   }
                 }
             },
+            "is_main_sponsor": {
+              "type" : "boolean"
+            },
             "is_active": {
                 "type" : "boolean"
             },
