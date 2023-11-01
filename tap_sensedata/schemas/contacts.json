@@ -33,10 +33,6 @@
             "custom_fields": {
                 "type": "object",
                 "properties": {
-                  "comunicacoes_cm": {
-                    "type": ["null", "string"],
-                    "optional": true
-                  }
                 }
             }
         }
