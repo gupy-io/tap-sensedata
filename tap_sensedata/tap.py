@@ -4,6 +4,7 @@ from singer_sdk import Stream, Tap
 from singer_sdk import typing as th
 
 from tap_sensedata.streams import (
+    ActiveContactsStream,
     ContractsStatusStream,
     ContractsStream,
     CustomDataStream,
@@ -25,6 +26,7 @@ STREAM_TYPES = [
     CustomersStream,
     CustomDataStream,
     TasksStream,
+    ActiveContactsStream,
 ]
 
 

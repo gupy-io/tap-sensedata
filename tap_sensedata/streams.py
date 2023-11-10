@@ -84,3 +84,12 @@ class KpisStream(sensedataStream):
     replication_key = "ref_date"
     schema_filepath = SCHEMAS_DIR / "kpis.json"
     records_jsonpath = "$.{}[*]".format(name)
+
+
+class ActiveContactsStream(sensedataStream):
+    name = "contacts"
+    path = "/contacts?is_active=true"
+    primary_keys = ["id"]
+    replication_key = None
+    schema_filepath = SCHEMAS_DIR / "contacts.json"
+    records_jsonpath = "contacts.[*]"

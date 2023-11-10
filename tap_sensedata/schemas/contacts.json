@@ -1,0 +1,43 @@
+{
+    "type": "object",
+        "properties": {
+            "id": {
+                "type": "integer"
+            },
+            "customer": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": ["null", "integer"]
+                  },
+                  "id_legacy": {
+                    "type": ["null", "string"]
+                  },
+                  "name_contract": {
+                    "type": ["null", "string"]
+                  },
+                  "name": {
+                    "type": ["null", "string"]
+                  }
+                }
+            },
+            "is_main_sponsor": {
+              "type" : ["null", "boolean"]
+            },
+            "is_active": {
+                "type" : "boolean"
+            },
+            "name": {
+                "type": ["null", "string"]
+            },
+            "email": {
+                "type": ["null", "string"]
+            },
+            "custom_fields": {
+                "type": "object",
+                "properties": {
+                }
+            }
+        }
+    }
+
