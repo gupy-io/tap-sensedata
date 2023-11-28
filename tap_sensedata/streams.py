@@ -90,6 +90,5 @@ class ActiveContactsStream(sensedataStream):
     name = "contacts"
     path = "/contacts"
     primary_keys = ["id"]
-    replication_key = "created_at"
     schema_filepath = SCHEMAS_DIR / "contacts.json"
     records_jsonpath = "$.{}[*]".format(name)
