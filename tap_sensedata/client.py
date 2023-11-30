@@ -70,5 +70,5 @@ class sensedataStream(RESTStream):
                     days=int(self.config.get(self.days_to_decrease_config_name))
                 )
             )
-            query_search["limit"] = 1000
+            query_search["limit"] = 10000
         return query_search
